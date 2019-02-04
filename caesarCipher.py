@@ -9,9 +9,15 @@ class CaesarCipher:
         for i in self.plaintext:
             if (ord(i) >= 65) and ord(i) <= 90:
                 new_value = ord(i) + self.difference
+                if new_value>90:
+                    diff = new_value - 90
+                    new_value = 65 + diff
 
             elif (ord(i) >= 97) and ord(i) <= 122:
                 new_value = ord(i) + self.difference
+                if new_value>122:
+                    diff = new_value - 122
+                    new_value = 97 + diff
 
             elif ord(i) == 32:
                 new_value = ord(i)
